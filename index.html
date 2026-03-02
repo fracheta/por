@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proteção Animal Brasil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #2e7d32;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background-image: url('https://example.com/imagem-cao-triste.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .stat {
+      background-color: #e8f5e9;
+      padding: 20px;
+      border-radius: 8px;
+      width: 45%;
+      text-align: center;
+    }
+
+    .stat h3 {
+      font-size: 28px;
+      color: #1b5e20;
+    }
+
+    .stat p {
+      font-size: 16px;
+    }
+
+    .image {
+      width: 100%;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .help-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .help-item {
+      background-color: #fff;
+      padding: 20px;
+      border-left: 5px solid #2e7d32;
+      border-radius: 5px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #2e7d32;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #1b5e20;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PROTEÇÃO ANIMAL BRASIL</h1>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#dados">Dados</a>
+      <a href="#legislacao">Legislação</a>
+      <a href="#ajudar">Como Ajudar</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>A VIOLÊNCIA CONTRA OS ANIMAIS É UM PROBLEMA REAL</h1>
+    <p>Juntos podemos mudar isso.</p>
+  </section>
+
+  <section id="dados">
+    <h2>Dados e Estatísticas</h2>
+    <div class="stats">
+      <div class="stat">
+        <h3>+18 MIL CASOS</h3>
+        <p>De maus-tratos a cães e gatos em 2022.</p>
+      </div>
+      <div class="stat">
+        <h3>+320 MIL DENÚNCIAS</h3>
+        <p>Registradas entre 2019 e 2023.</p>
+      </div>
+    </div>
+    <div class="image" style="background-image: url('https://example.com/imagem-estatisticas.jpg');"></div>
+  </section>
+
+  <section id="legislacao">
+    <h2>Legislação e Direitos dos Animais</h2>
+    <p>A legislação brasileira prevê punições para maus-tratos a animais. A Lei de Crimes Ambientais (Lei nº 9.605/1998) e a Lei Sansão (Lei nº 14.064/2020) aumentaram as penas para quem comete abusos contra cães e gatos.</p>
+    <div class="image" style="background-image: url('https://example.com/imagem-legislacao.jpg');"></div>
+  </section>
+
+  <section>
+    <h2>Caso Orelha</h2>
+    <p>O cachorro Orelha se tornou símbolo da luta contra a violência animal após sofrer agressões. Seu caso gerou comoção nacional e reforçou a importância da denúncia e da proteção animal.</p>
+    <div class="image" style="background-image: url('https://example.com/imagem-orelha.jpg');"></div>
+  </section>
+
+  <section id="ajudar">
+    <h2>Como Ajudar</h2>
+    <div class="help-list">
+      <div class="help-item">
+        <h3>Denuncie</h3>
+        <p>Informe às autoridades locais sobre maus-tratos.</p>
+      </div>
+      <div class="help-item">
+        <h3>Apoie ONGs</h3>
+        <p>Contribua com organizações que protegem animais.</p>
+      </div>
+      <div class="help-item">
+        <h3>Adote</h3>
+        <p>Prefira adotar em vez de comprar animais.</p>
+      </div>
+      <div class="help-item">
+        <h3>Conscientize</h3>
+        <p>Participe de campanhas educativas.</p>
+      </div>
+    </div>
+    <div class="image" style="background-image: url('https://example.com/imagem-ajuda.jpg');"></div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form>
+      <input type="text" placeholder="Nome" required>
+      <input type="email" placeholder="E-mail" required>
+      <textarea rows="5" placeholder="Mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Proteção Animal Brasil. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
