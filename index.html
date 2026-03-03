@@ -5,78 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>00 Brother: fechado com você - Violência contra animais</title>
     <style>
-        /* Paleta de cores extraída da G5.img (Dark Navy e Soft Grey) */
+        /* Paleta de cores baseada nas imagens: Dark Blue/Grey, White e Soft Grey */
         :root {
-            --primary-navy: #1a2a40; /* O tom de azul da logo */
-            --secondary-blue: #2c3e50;
-            --accent-light: #f4f7f6;
-            --text-dark: #222222;
+            --primary-color: #2c3e50; /* Cinza azulado escuro das imagens */
+            --accent-color: #34495e;
+            --bg-body: #f0f2f5;
+            --text-main: #1a1a1a;
             --white: #ffffff;
-            --grey-border: #d1d8e0;
         }
 
-        body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; margin: 0; padding: 0; background-color: var(--accent-light); color: var(--text-dark); }
+        body { font-family: 'Open Sans', Arial, sans-serif; margin: 0; padding: 0; background-color: var(--bg-body); color: var(--text-main); }
         
-        /* Cabeçalho Profissional com a Logo G5 */
+        /* Cabeçalho com Logo */
         header { 
-            background-color: var(--primary-navy); 
-            color: var(--white); 
-            padding: 12px 10%; 
+            background-color: var(--primary-color); 
+            color: white; 
+            padding: 10px 10%; 
             display: flex; 
             align-items: center; 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2); 
         }
         
-        .logo-box { display: flex; 
-                   align-items: center;
-                   padding: 0 10px 0 0;
-                   gap: 15px;
-                   border: 2px solid white;
-                   border-radius: 10px;
-                   overflow: hidden;
-                  }
-        .logo-img { height: 60px; width: 60px; object-fit: contain;}
-        header h1 { margin: 0; font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 50px; width: 50px; border-radius: 50%; object-fit: cover; border: 2px solid white; }
+        header h1 { margin: 0; font-size: 22px; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
 
         /* Layout */
-        .main-wrapper { max-width: 1150px; margin: 30px auto; display: grid; grid-template-columns: 2fr 1fr; gap: 40px; padding: 0 20px; }
-        .content-area { background-color: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
+        .main-wrapper { max-width: 1100px; margin: 20px auto; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; padding: 0 20px; }
+        .content-area { background-color: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         
-        /* Estilo Editorial */
-        .chapeu { color: var(--primary-navy); font-weight: 800; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; display: block; margin-bottom: 12px; }
-        h2 { font-size: 42px; margin: 0 0 20px 0; line-height: 1.1; font-weight: 900; color: var(--primary-navy); }
-        .subtitulo { font-size: 22px; color: #666; line-height: 1.5; margin-bottom: 25px; border-bottom: 2px solid var(--accent-light); padding-bottom: 25px; }
+        /* Estilo de Notícia */
+        .chapeu { color: var(--primary-color); font-weight: bold; text-transform: uppercase; font-size: 13px; display: block; margin-bottom: 10px; }
+        h2 { font-size: 38px; margin: 0 0 15px 0; line-height: 1.1; font-weight: 800; color: #000; }
+        .subtitulo { font-size: 20px; color: #555; line-height: 1.4; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
         
-        .autor-data { font-size: 14px; color: #888; margin-bottom: 30px; text-transform: uppercase; }
-        .autor-data strong { color: var(--primary-navy); }
+        .autor-data { font-size: 13px; color: #666; margin-bottom: 25px; }
+        .autor-data strong { color: var(--primary-color); }
 
         /* Blocos de Imagem */
-        .media-container { margin: 35px 0; }
-        .article-img { width: 100%; height: auto; border-radius: 10px; display: block; }
-        .legenda { font-size: 14px; color: #666; margin-top: 10px; font-style: italic; border-left: 4px solid var(--primary-navy); padding-left: 15px; }
+        .media-container { margin: 30px 0; }
+        .article-img { width: 100%; height: auto; border-radius: 8px; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .legenda { font-size: 13px; color: #777; margin-top: 8px; font-style: italic; border-left: 3px solid var(--primary-color); padding-left: 10px; }
 
-        /* Texto e Citações */
-        .texto-corpo p { font-size: 19px; line-height: 1.8; margin-bottom: 25px; color: #333; }
-        .citacao { border-left: 5px solid var(--primary-navy); padding: 25px; font-style: italic; font-size: 24px; color: var(--primary-navy); margin: 40px 0; background: var(--accent-light); border-radius: 0 10px 10px 0; }
-        h3 { font-size: 28px; margin-top: 45px; color: var(--primary-navy); font-weight: 800; }
+        /* Texto */
+        .texto-corpo p { font-size: 18px; line-height: 1.7; margin-bottom: 20px; }
+        .citacao { border-left: 4px solid var(--primary-color); padding-left: 20px; font-style: italic; font-size: 22px; color: #444; margin: 35px 0; background: #f9f9f9; padding: 20px; }
+        h3 { font-size: 26px; margin-top: 40px; color: var(--primary-color); border-bottom: 2px solid var(--primary-color); display: inline-block; padding-bottom: 5px; }
 
-        /* Caixa de Destaque para Denúncias */
-        .info-box { background-color: var(--primary-navy); color: var(--white); padding: 35px; margin: 40px 0; border-radius: 15px; }
-        .info-box h4 { margin-top: 0; color: #a5b1c2; text-transform: uppercase; font-size: 16px; letter-spacing: 2px; }
-        .info-box ul { padding-left: 0; margin-top: 20px; }
-        .info-box li { margin-bottom: 15px; font-size: 17px; list-style: none; display: flex; align-items: center; }
-        .info-box li::before { content: "✓"; margin-right: 15px; font-weight: bold; color: #4b7bec; }
+        /* Box de Denúncia */
+        .info-box { background-color: #f4f7f9; border: 1px solid var(--primary-color); padding: 25px; margin: 35px 0; border-radius: 12px; }
+        .info-box h4 { margin-top: 0; color: var(--primary-color); text-transform: uppercase; font-size: 16px; letter-spacing: 1px; }
+        .info-box ul { padding-left: 20px; }
+        .info-box li { margin-bottom: 12px; font-size: 16px; list-style-type: none; }
+        .info-box li::before { content: "🐾"; margin-right: 10px; font-size: 14px; color: var(--primary-color); }
 
-        /* Sidebar Customizada */
-        .sidebar-box { background-color: var(--white); padding: 25px; border-top: 6px solid var(--primary-navy); margin-bottom: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .sidebar-box h3 { font-size: 18px; margin-top: 0; border-bottom: 1px solid var(--grey-border); padding-bottom: 15px; margin-bottom: 15px; }
+        /* Sidebar */
+        .sidebar-box { background-color: var(--white); padding: 20px; border-top: 4px solid var(--primary-color); margin-bottom: 20px; border-radius: 0 0 4px 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .sidebar-box h3 { font-size: 18px; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; display: block; width: 100%; color: var(--primary-color); }
         .lista-mais-lidas { list-style: none; padding: 0; }
-        .lista-mais-lidas li { margin-bottom: 20px; display: flex; align-items: flex-start; }
-        .lista-mais-lidas a { text-decoration: none; color: var(--primary-navy); font-weight: 700; font-size: 15px; line-height: 1.3; }
-        .rank { color: var(--grey-border); font-size: 30px; font-weight: 900; margin-right: 15px; line-height: 1; }
+        .lista-mais-lidas li { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #f5f5f5; overflow: hidden; }
+        .lista-mais-lidas a { text-decoration: none; color: #333; font-weight: bold; font-size: 15px; }
+        .lista-mais-lidas a:hover { color: var(--primary-color); }
+        .rank { color: var(--primary-color); font-size: 24px; font-weight: bold; margin-right: 15px; float: left; opacity: 0.5; }
 
         @media (max-width: 850px) { .main-wrapper { grid-template-columns: 1fr; } }
     </style>
@@ -84,56 +77,56 @@
 <body>
 
 <header>
-    <div class="logo-box">
-        <img src="g5.img.png" alt="Logo 00 Brother" class="logo-img">
-        <h1>00 Brother:fechado com você</h1>
+    <div class="logo-container">
+        <img src="G4.img" alt="Logo 00 Brother" class="logo-img">
+        <h1>00 Brother: fechado com você</h1>
     </div>
 </header>
 
 <div class="main-wrapper">
     <main class="content-area">
-        <span class="chapeu">Dossiê Especial</span>
+        <span class="chapeu">Especial Direitos Animais</span>
         <h2>Violência contra animais no Brasil: do sofrimento silencioso à proteção legal</h2>
-        <p class="subtitulo">Entenda o que define maus-tratos, como identificar situações de risco e o papel da denúncia para garantir a dignidade animal.</p>
+        <p class="subtitulo">Entenda o que define maus-tratos, como identificar situações de perigo e o papel fundamental da denúncia para salvar vidas.</p>
         
         <div class="autor-data">
-            Por <strong>Redação 00 Brother</strong><br>
-            Publicado em 03/03/2026 às 08:15
+            Por <strong>Equipe 00 Brother</strong> — Brasília<br>
+            03/03/2026 08h15 · Atualizado há instantes
         </div>
 
         <div class="media-container">
-            <img src="G1.img" alt="Resgate Animal" class="article-img">
-            <p class="legenda">A senciência animal é o pilar que sustenta as novas leis de proteção no país.</p>
+            <img src="G1.img" alt="Senciência e Resgate" class="article-img">
+            <p class="legenda">A proteção animal fundamenta-se no reconhecimento de que animais são seres sensíveis.</p>
         </div>
 
         <div class="texto-corpo">
-            <h3>O que a lei define como violência?</h3>
-            <p>A violência não é apenas o ato físico. Manter animais em locais insalubres, sem iluminação adequada ou privá-los de alimentação básica são formas de maus-tratos reconhecidas pelo Código Penal.</p>
+            <h3>1. O que é a violência contra animais?</h3>
+            <p>A violência contra animais define-se por qualquer ação ou omissão que cause sofrimento desnecessário. Juridicamente, reconhece-se que animais são seres <strong>sencientes</strong>, capazes de sentir dor, medo e alegria.</p>
             
             <div class="media-container">
-                <img src="G2.img" alt="Conscientização" class="article-img">
-                <p class="legenda">A negligência é silenciosa, mas deixa marcas profundas na saúde física e mental dos animais.</p>
+                <img src="G2.img" alt="Condição Inadequada" class="article-img">
+                <p class="legenda">Negligência e falta de assistência básica configuram crimes graves perante a lei.</p>
             </div>
+
+            <h3>2. Como identificar maus-tratos?</h3>
+            <p>Além das agressões físicas diretas, a negligência (falta de água, comida ou abrigo) e o abandono são as formas mais comuns de violência no cotidiano brasileiro.</p>
 
             <div class="citacao">
-                "Uma sociedade que protege seus animais demonstra maturidade ética e um compromisso real com a justiça."
+                "Proteger um animal é um ato de humanidade que reflete diretamente na segurança e na ética de toda a nossa sociedade."
             </div>
 
-            <h3>O Impacto do Caso Orelha</h3>
-            <p>O caso do cão <strong>Orelha</strong> tornou-se o estandarte de uma mudança cultural necessária. Sua história foi o gatilho para que a sociedade exigisse penas que não se limitassem apenas a cestas básicas, mas sim à reclusão efetiva.</p>
-
             <div class="media-container">
-                <img src="G3.img" alt="Justiça Animal" class="article-img">
-                <p class="legenda">Mobilizações sociais após casos de crueldade foram fundamentais para a aprovação da Lei Sansão.</p>
+                <img src="G3.img" alt="Cão Orelha" class="article-img">
+                <p class="legenda">Casos emblemáticos como o do cão Orelha impulsionaram mudanças legislativas severas.</p>
             </div>
 
             <div class="info-box">
-                <h4>Central de Proteção: Como Denunciar</h4>
-                <p>Sua voz pode salvar um animal hoje. Utilize os canais oficiais abaixo:</p>
+                <h4>Guia de Denúncia: Canais Oficiais</h4>
+                <p>Ajude a salvar vidas. Se presenciar maus-tratos, utilize:</p>
                 <ul>
-                    <li><strong>Emergências:</strong> Ligue 190 (Polícia Militar).</li>
-                    <li><strong>Denúncia Anônima:</strong> Ligue 181 (Disque Denúncia).</li>
-                    <li><strong>Animais Silvestres:</strong> Linha Verde do IBAMA (0800 61 8080).</li>
+                    <li><strong>Polícia Militar (190):</strong> Para flagrantes e emergências.</li>
+                    <li><strong>Disque Denúncia (181):</strong> Para relatos anônimos.</li>
+                    <li><strong>Delegacia Eletrônica:</strong> Registro online de Boletim de Ocorrência.</li>
                 </ul>
             </div>
         </div>
@@ -141,19 +134,20 @@
 
     <aside class="sidebar">
         <div class="sidebar-box">
-            <h3>NOTÍCIAS RELACIONADAS</h3>
+            <h3>MAIS LIDAS</h3>
             <ul class="lista-mais-lidas">
-                <li><span class="rank">01</span><a href="#">Tudo o que você precisa saber sobre a Lei Sansão</a></li>
-                <li><span class="rank">02</span><a href="#">Como identificar sinais de estresse em animais resgatados</a></li>
-                <li><span class="rank">03</span><a href="#">O papel das ONGs na reabilitação de animais vítimas de maus-tratos</a></li>
-                <li><span class="rank">04</span><a href="#">Posse responsável: o guia definitivo para adoção</a></li>
+                <li><span class="rank">1</span><a href="#">Entenda a Lei Sansão e as novas penas</a></li>
+                <li><span class="rank">2</span><a href="#">Cães comunitários: conheça seus direitos</a></li>
+                <li><span class="rank">3</span><a href="#">Guia prático de posse responsável</a></li>
+                <li><span class="rank">4</span><a href="#">Como denunciar abandono em rodovias</a></li>
             </ul>
         </div>
         
-        <div class="sidebar-box" style="text-align: center; background-color: var(--accent-light);">
-            <small style="color: #999; display: block; margin-bottom: 10px;">PROMOVIDO POR</small>
-            <img src="G5.img" alt="Publicidade" style="width: 100px; opacity: 0.8; margin-bottom: 10px;">
-            <p style="font-size: 13px; color: var(--primary-navy); font-weight: bold;">00 Brother: Fechado com você em todas as causas.</p>
+        <div class="sidebar-box" style="background-color: #eef2f6; border: none; font-size: 14px; text-align: center;">
+            <p style="color: var(--primary-color); font-weight: bold; margin-bottom: 10px;">PARCEIRO AMIGO</p>
+            <div style="height: 250px; background: #fff; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 4px;">
+                <img src="G4.img" alt="Publicidade" style="max-width: 80%; opacity: 0.6;">
+            </div>
         </div>
     </aside>
 </div>
