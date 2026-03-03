@@ -3,109 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>00 Brother: fechado com você - Violência contra animais no Brasil: Cenário e Denúncias</title>
+    <title>00 Brother: fechado com você - Violência contra animais</title>
     <style>
         body { font-family: 'Open Sans', Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; color: #333; }
         
-        /* Topo G1 */
-        header { background-color: #c4170c; color: white; padding: 15px 10%; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        header h1 { margin: 0; font-size: 28px; letter-spacing: -1px; }
+        /* Topo Laranja Personalizado */
+        header { background-color: #ff6600; color: white; padding: 15px 10%; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        header h1 { margin: 0; font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
 
-        /* Layout em Colunas */
+        /* Layout */
         .main-wrapper { max-width: 1100px; margin: 20px auto; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; padding: 0 20px; }
-
         .content-area { background-color: white; padding: 30px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
         
         /* Estilo de Notícia */
-        .chapeu { color: #c4170c; font-weight: bold; text-transform: uppercase; font-size: 13px; display: block; margin-bottom: 10px; }
-        h2 { font-size: 42px; margin: 0 0 15px 0; line-height: 1.1; font-weight: 800; color: #000; }
+        .chapeu { color: #ff6600; font-weight: bold; text-transform: uppercase; font-size: 13px; display: block; margin-bottom: 10px; }
+        h2 { font-size: 38px; margin: 0 0 15px 0; line-height: 1.1; font-weight: 800; color: #000; }
         .subtitulo { font-size: 20px; color: #555; line-height: 1.4; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
         
         .autor-data { font-size: 13px; color: #666; margin-bottom: 25px; }
         .autor-data strong { color: #333; }
 
-        /* Imagem e Legenda */
-        .media-container { margin-bottom: 25px; }
-        .placeholder-img { width: 100%; height: 450px; background-color: #eaeaea; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #888; border: 1px dashed #ccc; }
-        .legenda { font-size: 13px; color: #777; margin-top: 8px; font-style: italic; }
+        /* Blocos de Imagem (Espaços para você preencher) */
+        .media-container { margin: 30px 0; }
+        .placeholder-img { width: 100%; height: 350px; background-color: #f0f0f0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #ff6600; border: 2px dashed #ff6600; border-radius: 8px; }
+        .placeholder-img span { font-weight: bold; margin-top: 10px; color: #555; }
+        .legenda { font-size: 13px; color: #777; margin-top: 8px; font-style: italic; border-left: 2px solid #ff6600; padding-left: 10px; }
 
-        /* Corpo do Texto */
+        /* Texto */
         .texto-corpo p { font-size: 18px; line-height: 1.7; margin-bottom: 20px; }
-        .citacao { border-left: 4px solid #c4170c; padding-left: 20px; font-style: italic; font-size: 22px; color: #444; margin: 30px 0; }
+        .citacao { border-left: 4px solid #ff6600; padding-left: 20px; font-style: italic; font-size: 22px; color: #444; margin: 35px 0; }
+        h3 { font-size: 26px; margin-top: 40px; color: #000; border-bottom: 2px solid #ff6600; display: inline-block; padding-bottom: 5px; }
 
-        /* Box de Informação Útil */
-        .info-box { background-color: #f9f9f9; border: 1px solid #ddd; padding: 20px; margin: 30px 0; border-radius: 8px; }
-        .info-box h4 { margin-top: 0; color: #c4170c; text-transform: uppercase; font-size: 15px; }
+        /* Box de Denúncia */
+        .info-box { background-color: #fff9f5; border: 1px solid #ff6600; padding: 25px; margin: 35px 0; border-radius: 12px; }
+        .info-box h4 { margin-top: 0; color: #ff6600; text-transform: uppercase; font-size: 16px; letter-spacing: 1px; }
         .info-box ul { padding-left: 20px; }
-        .info-box li { margin-bottom: 10px; font-size: 16px; }
+        .info-box li { margin-bottom: 12px; font-size: 16px; list-style-type: none; }
+        .info-box li::before { content: "🟠"; margin-right: 10px; font-size: 12px; }
 
-        /* Sidebar - Mais Lidas */
-        .sidebar { background-color: transparent; }
-        .sidebar-box { background-color: white; padding: 20px; border-top: 3px solid #c4170c; margin-bottom: 20px; }
-        .sidebar-box h3 { font-size: 18px; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        /* Sidebar */
+        .sidebar-box { background-color: white; padding: 20px; border-top: 3px solid #ff6600; margin-bottom: 20px; }
+        .sidebar-box h3 { font-size: 18px; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; display: block; width: 100%; }
         .lista-mais-lidas { list-style: none; padding: 0; }
-        .lista-mais-lidas li { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #f5f5f5; }
-        .lista-mais-lidas a { text-decoration: none; color: #333; font-weight: bold; font-size: 15px; display: block; }
-        .lista-mais-lidas a:hover { color: #c4170c; }
-        .rank { color: #c4170c; font-size: 24px; font-weight: bold; margin-right: 10px; float: left; line-height: 1; }
+        .lista-mais-lidas li { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #f5f5f5; overflow: hidden; }
+        .lista-mais-lidas a { text-decoration: none; color: #333; font-weight: bold; font-size: 15px; }
+        .lista-mais-lidas a:hover { color: #ff6600; }
+        .rank { color: #ff6600; font-size: 24px; font-weight: bold; margin-right: 15px; float: left; }
 
-        @media (max-width: 850px) {
-            .main-wrapper { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 850px) { .main-wrapper { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>g1</h1>
+    <h1>00 Brother: fechado com você</h1>
 </header>
 
 <div class="main-wrapper">
     <main class="content-area">
-        <span class="chapeu">Direitos dos Animais</span>
-        <h2>Violência contra animais cresce 20% no último ano; especialistas alertam para 'Teoria do Elo'</h2>
-        <p class="subtitulo">Aumento nas notificações reflete maior rigor da Lei Sansão e facilidade no acesso aos canais digitais de denúncia em todo o território nacional.</p>
+        <span class="chapeu">Especial Direitos Animais</span>
+        <h2>Violência contra animais no Brasil: do sofrimento silencioso à proteção legal</h2>
+        <p class="subtitulo">Entenda o que define maus-tratos, como identificar situações de perigo e o papel fundamental da denúncia para salvar vidas.</p>
         
         <div class="autor-data">
-            Por <strong>G1</strong> — Brasília<br>
-            02/03/2026 11h20  · Atualizado há 5 minutos
+            Por <strong>Equipe 00 Brother</strong> — Brasília<br>
+            03/03/2026 08h15 · Atualizado há instantes
         </div>
 
         <div class="media-container">
             <div class="placeholder-img">
-                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-                <span>[IMAGEM: Resgate realizado pela Polícia Ambiental]</span>
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                <span>[INSIRA AQUI: IMAGEM SOBRE SENCIÊNCIA OU RESGATE]</span>
             </div>
-            <p class="legenda">Operação em Curitiba resgatou 15 animais em situação de abandono extremo nesta semana. — Foto: Arquivo/G1</p>
+            <p class="legenda">Animais são seres capazes de sentir emoções complexas, o que fundamenta as leis de proteção atuais.</p>
         </div>
 
         <div class="texto-corpo">
-            <p>O Brasil registrou um aumento significativo nas denúncias de maus-tratos contra animais no último ciclo anual. Segundo dados coletados pelo Fórum Nacional de Proteção e Defesa Animal, a maior conscientização sobre a <strong>Lei 14.064/20</strong> permitiu que vizinhos e familiares rompessem o silêncio sobre crimes ocorridos em residências particulares.</p>
+            <h3>1. O que é a violência contra animais?</h3>
+            <p>A violência contra animais, ou maus-tratos, define-se por qualquer ação ou omissão, consciente ou por negligência, que cause sofrimento desnecessário, ferimentos, dor ou estresse a um ser vivo. Juridicamente, a ciência já reconhece que animais são seres <strong>sencientes</strong>. Portanto, a violência vai muito além do ato físico; é a privação da dignidade de um ser que depende totalmente do cuidado humano.</p>
             
-            <p>Especialistas em psicologia criminal apontam para a <em>"Teoria do Elo"</em>, que estabelece uma conexão direta entre a violência contra animais e a violência doméstica. "Muitas vezes, o agressor utiliza o animal para coagir ou torturar psicologicamente outros membros da família", explica o Dr. Roberto Silva, jurista especializado.</p>
-
-            <div class="citacao">
-                "Aumentar a pena não é apenas sobre punir quem maltrata um cão ou gato, é sobre reconhecer que a crueldade contra seres sencientes é um indicador de periculosidade social."
+            <div class="media-container">
+                <div class="placeholder-img">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                    <span>[INSIRA AQUI: IMAGEM DE ANIMAL EM CONDIÇÃO INADEQUADA]</span>
+                </div>
+                <p class="legenda">Negligência, como falta de abrigo e água, é uma das formas mais comuns de maus-tratos.</p>
             </div>
 
-            <h3>O que é considerado crime hoje?</h3>
-            <p>A legislação brasileira é clara ao tipificar como crime de maus-tratos:</p>
-            <ul>
-                <li>Abandono em vias públicas ou em casas vazias;</li>
-                <li>Privação de alimento, água ou abrigo contra sol e chuva;</li>
-                <li>Manter o animal acorrentado de forma que impeça sua locomoção mínima;</li>
-                <li>Agressão física, mutilação ou envenenamento;</li>
-                <li>Utilização em lutas (rinhas) ou exploração comercial abusiva.</li>
-            </ul>
+            <h3>2. Como ela ocorre no dia a dia?</h3>
+            <p>A violência se manifesta de formas diretas (agressões, mutilações e envenenamentos) e indiretas. As formas <strong>indiretas</strong> envolvem a negligência: manter o animal sem comida, água limpa, acorrentado ou sem assistência médica. O abandono e a exploração em trabalhos exaustivos ou rinhas também são crimes graves previstos em lei.</p>
+
+            <div class="citacao">
+                "Proteger um animal é um ato de humanidade que reflete diretamente no caráter e na segurança de toda a nossa sociedade."
+            </div>
+
+            <div class="media-container">
+                <div class="placeholder-img">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>[INSIRA AQUI: IMAGEM DO CACHORRO ORELHA]</span>
+                </div>
+                <p class="legenda">O cão Orelha tornou-se símbolo da luta por justiça e leis mais severas no Brasil.</p>
+            </div>
+
+            <h3>3. Caso Orelha: Um Símbolo de Resistência</h3>
+            <p>O caso do cachorro <strong>Orelha</strong> é um marco. Vítima de uma agressão brutal, sua história mobilizou o país e impulsionou o debate sobre o endurecimento das penas. Graças à comoção gerada por casos como o dele e do cão Sansão, hoje agressores enfrentam punições reais, mostrando que a crueldade não será mais ignorada.</p>
+
+            <div class="media-container">
+                <div class="placeholder-img">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>[INSIRA AQUI: IMAGEM DE CANAIS DE DENÚNCIA]</span>
+                </div>
+                <p class="legenda">Denunciar é o primeiro passo para garantir a segurança dos animais em perigo.</p>
+            </div>
 
             <div class="info-box">
-                <h4>Guia de Denúncia: Onde e como fazer?</h4>
-                <p>Para que a denúncia seja efetiva, tente reunir fotos, vídeos e o endereço exato do local.</p>
+                <h4>4. Guia de Denúncia: Como Agir</h4>
+                <p>Não seja omisso. Reúna provas (fotos/vídeos) e utilize os canais oficiais:</p>
                 <ul>
-                    <li><strong>📞 190 (Polícia Militar):</strong> Para situações de flagrante e emergência.</li>
-                    <li><strong>💻 Delegacia Eletrônica:</strong> Acesse o site da Polícia Civil do seu estado e procure a seção de "Maus-tratos a animais".</li>
-                    <li><strong>🦉 Linha Verde do IBAMA:</strong> (0800 61 8080) Para casos envolvendo animais silvestres e tráfico.</li>
-                    <li><strong>📧 Ministério Público:</strong> Pode ser acionado para denunciar negligência sistemática ou acumuladores de animais.</li>
+                    <li><strong>Polícia Militar (190):</strong> Casos de urgência e flagrante.</li>
+                    <li><strong>Disque Denúncia (181):</strong> Para denúncias anônimas em todo o estado.</li>
+                    <li><strong>Delegacia Eletrônica:</strong> Registro de B.O. online para maus-tratos.</li>
+                    <li><strong>IBAMA (0800 61 8080):</strong> Para animais silvestres.</li>
                 </ul>
             </div>
         </div>
@@ -115,29 +133,16 @@
         <div class="sidebar-box">
             <h3>MAIS LIDAS</h3>
             <ul class="lista-mais-lidas">
-                <li>
-                    <span class="rank">1</span>
-                    <a href="#">Como identificar sinais de envenenamento em pets</a>
-                </li>
-                <li>
-                    <span class="rank">2</span>
-                    <a href="#">Justiça condena agressor a 3 anos de prisão em regime fechado</a>
-                </li>
-                <li>
-                    <span class="rank">3</span>
-                    <a href="#">Adoção responsável: 5 coisas que você precisa saber antes</a>
-                </li>
-                <li>
-                    <span class="rank">4</span>
-                    <a href="#">Cidades que oferecem castração gratuita no Brasil; veja lista</a>
-                </li>
+                <li><span class="rank">1</span><a href="#">Entenda a Lei Sansão e as penas para agressores</a></li>
+                <li><span class="rank">2</span><a href="#">Cães comunitários: como a lei protege esses animais</a></li>
+                <li><span class="rank">3</span><a href="#">Posse responsável: 10 cuidados antes de adotar</a></li>
+                <li><span class="rank">4</span><a href="#">O que fazer se presenciar um abandono?</a></li>
             </ul>
         </div>
-
-        <div class="sidebar-box" style="background-color: #eee; border: none; font-size: 14px; text-align: center;">
-            <p>PUBLICIDADE</p>
-            <div style="height: 250px; background: #ddd; display: flex; align-items: center; justify-content: center;">
-                Anuncie aqui
+        <div class="sidebar-box" style="background-color: #fff2e6; border: none; font-size: 14px; text-align: center;">
+            <p style="color: #ff6600; font-weight: bold;">PUBLICIDADE</p>
+            <div style="height: 250px; background: #ffe0cc; display: flex; align-items: center; justify-content: center; color: #ff6600; border: 1px solid #ffccaa;">
+                Espaço Publicitário
             </div>
         </div>
     </aside>
